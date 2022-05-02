@@ -333,8 +333,7 @@ li {
 .section-header2 {
   width: 936px;
   height: 101px;
-  /* padding-left: 40px;
-  padding-right: 44px; */
+  padding-left: 40px;
   padding-top: 59px;
 }
 .about {
@@ -362,7 +361,7 @@ li {
 .profile {
   height: 423px;
   width: 300px;
-  /* border: 1px solid gray; */
+  border: 1px solid gray;
 }
 .photo {
   height: 300px;
@@ -370,20 +369,11 @@ li {
 }
 .pname {
   font-size: 18px;
-  padding-top: 17px;
 }
 .pdescription {
   font-size: 12px;
-  padding-top: 7px;
 }
-.icons {
-  padding-top: 10px;
-  color: #666d89;
-}
-.bg3 {
-  width: 1020px;
-  height: 648px;
-  background-color: #f06c64;
+.icon {
 }
 
 /* }
