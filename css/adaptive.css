@@ -110,8 +110,7 @@
   }
   .description-contact {
     width: auto;
-    /* height: 631px; */
-  }
+     }
   .info-box {
     width: 690px;
     flex-direction: row;
