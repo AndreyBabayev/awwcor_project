@@ -39,14 +39,11 @@ function showSlides(n) {
   dots[slideIndex - 1].className += ' active';
 }
 
-$(function() {
-  $(".hamburger").click(function(){
-   $(this).toggleClass("is-active");
-    
-    if($(this).hasClass('is-active')){
-$('.mnu_top').slideRight(300);
-    }else{
-      $('.mnu_top').slideLeft(300);   
-    }
-  });
-});
+function burgerFunction() {
+  var x = document.getElementById("hamburger");
+  if (x.className === "mnu_top") {
+    x.className += " responsive";
+  } else {
+    x.className = "mnu_top";
+  }
+}

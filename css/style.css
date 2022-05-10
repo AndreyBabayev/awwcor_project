@@ -40,13 +40,21 @@ footer {
 }
 .mnu_top {
   width: 375px;
-  height: 14px;
+  /* height: 14px; */
   display: flex;
   flex-wrap: nowrap;
   text-decoration: none;
   list-style-type: none;
   justify-content: center;
+  overflow: hidden;
+  margin-top: 10px;
 }
+.mnu_top .icon {
+  display: none;
+}
+/* .icon {
+  /* display: none; }*/
+
 a {
   color: #e5e5e5;
   font-size: 12px;
@@ -248,7 +256,7 @@ p {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.pic-portfolio {
+.pic-portfolio img {
   width: 220px;
 }
 .section-about-us {
