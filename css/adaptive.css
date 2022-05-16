@@ -25,8 +25,10 @@
   .mnu_top {
     width: 438px;
   }
-  /* .icon {
-    display: none; */
+
+  a.trigger {
+    display: none;
+  }
 
   .slider {
     max-width: 100%;
@@ -192,7 +194,7 @@
   .global {
     width: 375px;
   }
-  /* .mnu_top a:not(:first-child) {
+  .mnu_top a:not(:first-child) {
     display: none;
   }
   .mnu_top a.icon {
@@ -211,21 +213,21 @@
     float: none;
     display: block;
     text-align: left;
-  } */
-  /* .mnu_top.responsive a {
-      float: none;
-      display: block;
-      text-align: right;
-      /* width: 278px;
-      height: 812px; */
-/* 
+  }
+  */ .mnu_top.responsive a {
+    float: none;
+    display: block;
+    text-align: right;
+    width: 278px;
+    height: 812px;
+  }
   .icon {
     display: block;
     margin-left: 20px;
   }
   .mnu_top {
     display: none;
-  } */
+  }
 
   header {
     display: flex;

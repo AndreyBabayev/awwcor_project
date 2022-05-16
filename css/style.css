@@ -47,11 +47,11 @@ footer {
   list-style: none;
   justify-content: center;
   overflow: hidden;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
-/* .mnu_top.icon {
+a.trigger {
   display: none;
-} */
+}
 a {
   color: #e5e5e5;
   font-size: 12px;
@@ -62,6 +62,10 @@ a {
 }
 a:hover {
   color: #f06c64;
+}
+ul {
+  list-style-type: none;
+  display: inline-flex;
 }
 p {
   color: #f06c64;
