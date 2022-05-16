@@ -40,21 +40,18 @@ footer {
 }
 .mnu_top {
   width: 375px;
-  /* height: 14px; */
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
   text-decoration: none;
-  list-style-type: none;
+  list-style: none;
   justify-content: center;
   overflow: hidden;
   margin-top: 10px;
 }
-.mnu_top .icon {
+/* .mnu_top.icon {
   display: none;
-}
-/* .icon {
-  /* display: none; }*/
-
+} */
 a {
   color: #e5e5e5;
   font-size: 12px;
@@ -229,17 +226,19 @@ p {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  width: 290px;
+  justify-content: flex-start;
+  width: 401px;
   padding-top: 55px;
   font-size: 12px;
 }
-.filter-list.li {
+.filter-list .btn {
   border: 1px solid #767e9e;
+  height: 28px;
   border-radius: 5px;
-  list-style-type: none;
+  list-style: none;
   padding-left: 5px;
-  height: 18px;
+  font-size: 12px;
+  width: 100%;
 }
 .portfolio {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -250,6 +249,9 @@ p {
   height: 47px;
   font-size: 18px;
 }
+.show {
+  display: block;
+}
 .picport {
   width: 940px;
   display: flex;
@@ -257,6 +259,7 @@ p {
   justify-content: space-evenly;
 }
 .pic-portfolio img {
+  margin-top: 5px;
   width: 220px;
 }
 .section-about-us {
