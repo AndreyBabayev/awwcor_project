@@ -1,23 +1,29 @@
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM fully loaded and parsed");
+});
+
+
 window.onload = function () {
+
   showSlides(slideIndex);
   filterSelection('all');
 
   let filterList = document.getElementById('filter-list');
   let btns = filterList.getElementsByClassName('btn');
 
+
   for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', function () {
-      let current = document.getElementsByClassName('active-button');
-      current[0].className = current[0].className.replace(' active-button', '');
-      this.className += ' active-button';
+      let current = document.getElementsByClassName('active');
+      current[0].className = current[0].className.replace(' active', '');
+      this.className += ' active';
     });
   }
-};
+}
 
-// Почитай про команду window.onload !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// Для dots та btn потрібні різні класни active, вони разом працювали для slider та buttons!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 let slideIndex = 1;
+
 
 function plusSlide() {
   showSlides((slideIndex += 1));
@@ -51,16 +57,27 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = 'block';
   dots[slideIndex - 1].className += ' active';
 }
-
+// function burgerFunction() {
+//   var x = document.getElementById('hamburger');
+//   if (x.className === 'mnu_top') {
+//     x.className += 'responsive';
+//   } else {
+//     x.className = 'mnu_top';
+//   }
+// }
+; // Execute the function and show all columns
 function filterSelection(c) {
   let x, i;
   x = document.getElementsByClassName('pic-portfolio');
   if (c == 'all') c = '';
+
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     imgRemoveClass(x[i], 'show');
     if (x[i].className.indexOf(c) > -1) imgAddClass(x[i], 'show');
   }
 }
+// Show filtered elements
 function imgAddClass(element, name) {
   let i, arr1, arr2;
   arr1 = element.className.split(' ');
@@ -71,6 +88,7 @@ function imgAddClass(element, name) {
     }
   }
 }
+// Hide elements that are not selected
 function imgRemoveClass(element, name) {
   let i, arr1, arr2;
   arr1 = element.className.split(' ');
@@ -82,50 +100,6 @@ function imgRemoveClass(element, name) {
   }
   element.className = arr1.join(' ');
 }
-// function showImage(event) {
-//   let modal = document.getElementById('myModal');
-//   let img = document.getElementsById('myImg');
-//   let modalImg = document.getElementById('img01');
 
-//   img.onclick = function () {
-//     modal.style.display = 'block';
-//     modalImg.src = this.src;
-//   };
-//   let span = document.getElementsByClassName('close')[0];
-//   span.onclick = function () {
-//     modal.style.display = 'none';
-//   };
-// }
-document.addEventListener('DOMContentLoaded', function () {
-  let modal = document.querySelector('myImg');
-  let img = new bootstrap.Modal(document.querySelector('img01'));
-  img.onclick.addEventListener('click', function () {
-    modal.show();
-  });
-});
+// Add active class to the current button (highlight it)
 
-function burgerMenu(selector) {
-  let menu = $(selector);
-  let button = menu.find('.burger-menu_button', '.burger-menu_lines');
-  let links = menu.find('.burger-menu_link');
-  let overlay = menu.find('.burger-menu_overlay');
-
-  button.on('click', (e) => {
-    e.preventDefault();
-    toggleMenu();
-  });
-
-  links.on('click', () => toggleMenu());
-  overlay.on('click', () => toggleMenu());
-
-  function toggleMenu() {
-    menu.toggleClass('burger-menu_active');
-
-    if (menu.hasClass('burger-menu_active')) {
-      $('body').css('overflow', 'hidden');
-    } else {
-      $('body').css('overflow', 'visible');
-    }
-  }
-}
-burgerMenu('.burger-menu');

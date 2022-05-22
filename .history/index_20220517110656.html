@@ -1,47 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="css/fontawesome/css/all.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/347904c773.js" crossorigin="anonymous"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/adaptive.css" />
-  </head>
 
-  <body>
-    <div class="global">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="css/fontawesome/css/all.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/347904c773.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/adaptive.css" />
+</head>
+
+<body>
+  <!-- <div class="global">
       <header>
         <h1 class="title">
           SINGOLO
           <p>*</p>
         </h1>
-        <div class="burger-menu">
-          <a href="" class="burger-menu_button">
-            <spun class="burger-menu_lines"></spun>
-          </a>
-          <nav class="burger-menu_nav">
-            <a href="#home" class="burger-menu_link">HOME</a>
-            <a href="#services" class="burger-menu_link">SERVICES</a>
-            <a href="#portfolio" class="burger-menu_link">PORTFOLIO</a>
-            <a href="#about" class="burger-menu_link">ABOUT</a>
-            <a href="#contact" class="burger-menu_link">CONTACT</a>
-          </nav>
-          <div class="burger-menu_overlay"></div>
+        <a href="#0" class="trigger" onclick="burgerFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <div class="mnu_top" id="hamburger">
+          <ul class="mnu_list">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#portfolio">PORTFOLIO</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
         </div>
       </header>
-         <section class="slider">
+      <section class="slider">
         <div class="item">
           <img src="./images/src/images_slide/1.jpeg" alt="1" />
         </div>
@@ -134,65 +130,60 @@
             </div>
           </div>
         </div>
-      </section>
-      <section class="section-portfolio">
-        <div class="section-header1">
-          <h1 class="portfolio">Portfolio</h1>
-          <div class="description-portfolio" id="portfolio">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-          </div>
-        </div>
-        <div class="filter-list" id="filter-list">
-          <button class="btn active-button" onclick="filterSelection('all')">All</button>
-          <button class="btn" onclick="filterSelection('webdesign')">Web Design</button>
-          <button class="btn" onclick="filterSelection('graphicdesign')">Graphic Design</button>
-          <button class="btn" onclick="filterSelection('artwork')">Artwork</button>
-        </div>
-        <div class="picport">
-          <div class="pic-portfolio webdesign">
-            <img id="myImg" data-toggle="modal" data-target="img01" src="./images/src/image_portfolio/portfolio-1.png" alt="port1" />
-          </div>
-          <div class="pic-portfolio webdesign">
-            <img id="myImg2" src="./images/src/image_portfolio/portfolio-2.png" alt="port2" />
-          </div>
-          <div class="pic-portfolio webdesign">
-            <img id="myImg3" src="./images/src/image_portfolio/portfolio-3.png" alt="port3" />
-          </div>
-          <div class="pic-portfolio graphicdesign">
-            <img id="myImg4" src="./images/src/image_portfolio/portfolio-4.png" alt="port4" />
-          </div>
-          <div class="pic-portfolio graphicdesign">
-            <img id="myImg5" src="./images/src/image_portfolio/portfolio-5.png" alt="port5" />
-          </div>
-          <div class="pic-portfolio graphicdesign">
-            <img id="myImg6" src="./images/src/image_portfolio/portfolio-6.png" alt="port6" />
-          </div>
-          <div class="pic-portfolio artwork">
-            <img id="myImg7" src="./images/src/image_portfolio/portfolio-7.png" alt="port7" />
-          </div>
-          <div class="pic-portfolio artwork">
-            <img id="myImg8" src="./images/src/image_portfolio/portfolio-8.png" alt="port8" />
-          </div>
-          <div class="pic-portfolio artwork">
-            <img id="myImg9" src="./images/src/image_portfolio/portfolio-9.png" alt="port9" />
-          </div>
-          <div class="pic-portfolio webdesign">
-            <img id="myImg10" src="./images/src/image_portfolio/portfolio-10.png" alt="port10" />
-          </div>
-          <div class="pic-portfolio graphicdesign">
-            <img id="myImg11" src="./images/src/image_portfolio/portfolio-11.png" alt="port11" />
-          </div>
-          <div class="pic-portfolio artwork">
-            <img id="myImg12" src="./images/src/image_portfolio/portfolio-12.png" alt="port12" />
-          </div>
-          <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section-about-us">
+      </section> -->
+  <section class="section-portfolio">
+    <div class="section-header1">
+      <h1 class="portfolio">Portfolio</h1>
+      <div class="description-portfolio" id="portfolio">
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+      </div>
+    </div>
+    <div class="filter-list" id="filter-list">
+      <button class="btn active" onclick="filterSelection('all')">All</button>
+      <button class="btn" onclick="filterSelection('webdesign')">Web Design</button>
+      <button class="btn" onclick="filterSelection('graphicdesign')">Graphic Design</button>
+      <button class="btn" onclick="filterSelection('artwork')">Artwork</button>
+    </div>
+    <div class="picport">
+      <div class="pic-portfolio webdesign">
+        <img src="./images/src/image_portfolio/portfolio-1.png" alt="port1" />
+      </div>
+      <div class="pic-portfolio webdesign">
+        <img src="./images/src/image_portfolio/portfolio-2.png" alt="port2" />
+      </div>
+      <div class="pic-portfolio webdesign">
+        <img src="./images/src/image_portfolio/portfolio-3.png" alt="port3" />
+      </div>
+      <div class="pic-portfolio graphicdesign">
+        <img src="./images/src/image_portfolio/portfolio-4.png" alt="port4" />
+      </div>
+      <div class="pic-portfolio graphicdesign">
+        <img src="./images/src/image_portfolio/portfolio-5.png" alt="port5" />
+      </div>
+      <div class="pic-portfolio graphicdesign">
+        <img src="./images/src/image_portfolio/portfolio-6.png" alt="port6" />
+      </div>
+      <div class="pic-portfolio artwork">
+        <img src="./images/src/image_portfolio/portfolio-7.png" alt="port7" />
+      </div>
+      <div class="pic-portfolio artwork">
+        <img src="./images/src/image_portfolio/portfolio-8.png" alt="port8" />
+      </div>
+      <div class="pic-portfolio artwork">
+        <img src="./images/src/image_portfolio/portfolio-9.png" alt="port9" />
+      </div>
+      <div class="pic-portfolio artwork">
+        <img src="./images/src/image_portfolio/portfolio-10.png" alt="port10" />
+      </div>
+      <div class="pic-portfolio artwork">
+        <img src="./images/src/image_portfolio/portfolio-11.png" alt="port11" />
+      </div>
+      <div class="pic-portfolio artwork">
+        <img src="./images/src/image_portfolio/portfolio-12.png" alt="port12" />
+      </div>
+    </div>
+  </section>
+  <!-- <section class="section-about-us">
         <div class="section-header2">
           <h1 class="about">About Us</h1>
           <div class="description-about-us" id="about">
@@ -301,8 +292,10 @@
       </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-     crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
     ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
@@ -314,6 +307,7 @@
       integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js"></script>
-  </body>
+    <script src="js/script.js"></script> -->
+</body>
+
 </html>
