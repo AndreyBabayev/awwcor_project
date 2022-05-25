@@ -358,7 +358,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 1100px;
+    height: 844px;
     justify-content: space-between;
     align-content: flex-start;
     padding: 30px 30px 30px 30px;
@@ -380,6 +380,15 @@
   }
   .modal-content {
     width: 100%;
+  }
+  #myImg,
+  #myImg3,
+  #myImg6,
+  #myImg11 {
+    display: none;
+  }
+  .btn {
+    padding-left: 0px;
   }
 
   .section-about-us {
