@@ -6,7 +6,6 @@
   font-family: 'Lato', sans-serif;
   width: 1020px;
   height: auto;
-  border: 1px solid gray;
   position: relative;
   overflow-x: hidden;
 }
@@ -22,7 +21,6 @@ header {
   padding-right: 40px;
 }
 footer {
-  margin-top: 6px;
   background-color: #2d303a;
   display: flex;
   flex-direction: row;
@@ -214,9 +212,10 @@ p {
   width: 400px;
   font-size: 12px;
   justify-content: start;
-  }
+}
 .btn {
-  margin: 10px;
+  padding: 1px 6px;
+  margin: 5px;
   width: auto;
   border: 1px solid #767e9e;
   color: #767e9e !important;
@@ -224,7 +223,7 @@ p {
   font-size: 12px;
   height: 22px;
 }
-.btn.text{
+.btn.text {
   position: absolute;
   align-items: center;
 }
@@ -275,10 +274,14 @@ p {
   background-color: rgba(0, 0, 0, 0.9);
 }
 .modal-content {
+  position: relative;
+  top: 500px;
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 40px;
+  border: 5px solid white;
 }
 .modal-content,
 #caption {
@@ -393,24 +396,29 @@ p {
   flex-wrap: wrap;
   width: 620px;
 }
-input,
-textarea {
+input::placeholder,
+textarea::placeholder {
   padding-left: 10px;
   color: #f48c8f !important;
   font-family: 'Lato', sans-serif !important;
+  outline: none;
 }
 input {
+  outline: 1px solid white;
   width: 620px;
   height: 38px;
   border-radius: 5px;
+  color: #f48c8f;
   background-color: #d6564f;
   border: none;
   font-size: 12px;
   margin-top: 10px;
 }
 textarea {
+  outline: 1px solid white;
   width: 620px;
   height: 159px;
+  color: #f48c8f;
   background-color: #d6564f;
   border: none;
   font-size: 12px;
