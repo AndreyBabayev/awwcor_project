@@ -1,997 +1,3 @@
-<style>
-  .global {
-    box-sizing: border-box;
-    margin: 0 auto;
-    background: #e5e5e5;
-    color: #e5e5e5;
-    font-family: 'Lato', sans-serif;
-    width: 1020px;
-    height: auto;
-    position: relative;
-    overflow-x: hidden;
-  }
-  header {
-    background-color: #2d303a;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 95px;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-  footer {
-    background-color: #2d303a;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-width: 100%;
-    height: 76px;
-    justify-content: center;
-  }
-  .title {
-    display: flex;
-    flex-direction: row;
-    width: 124px;
-    align-items: center;
-    justify-content: start;
-    font-size: 25px;
-    font-weight: bold;
-  }
-  .burger-menu {
-    width: 375px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    text-decoration: none;
-    list-style: none;
-    justify-content: center;
-    overflow: hidden;
-    margin-top: 0;
-  }
-  a {
-    color: #e5e5e5;
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    list-style-type: none;
-    padding-left: 10px;
-  }
-  a:hover {
-    color: #f06c64;
-  }
-  .nav {
-    display: inline-flex;
-  }
-  p {
-    color: #f06c64;
-  }
-  .slider {
-    margin-top: 6px;
-    max-width: 100%;
-    position: relative;
-    width: 100%;
-    height: 594px;
-    margin-bottom: 130px;
-    margin: auto;
-  }
-  .slider .item img {
-    object-fit: cover;
-    width: 100%;
-    height: 594px;
-  }
-
-  .slider .prev,
-  .slider .next {
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: #e94348;
-    font-weight: bold;
-    font-size: 40px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-  }
-  .slider .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  .active-button {
-    background-color: #aaa !important;
-  }
-  .slider .item {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  @-webkit-keyframes fade {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes fade {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  .section-our-service {
-    margin-top: 6px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 500px;
-    background-color: #f2f2f2;
-    padding: 40px 60px 40px 46px;
-  }
-  .section-header {
-    width: 936px;
-  }
-  .services-list {
-    color: #767e9e;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-top: 30px;
-  }
-  .name {
-    color: #666d89;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    line-height: 36px;
-    font-weight: 900 black;
-  }
-  .description-our-services {
-    color: #767e9e;
-    width: 936px;
-    font-size: 18px;
-  }
-  .service-item-1,
-  .service-item-2,
-  .service-item-3 {
-    display: flex;
-    align-items: start;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    width: 300px;
-  }
-  .service-item-4,
-  .service-item-5,
-  .service-item-6 {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: start;
-    justify-content: space-around;
-    width: 300px;
-  }
-  .name1,
-  .name2,
-  .name3 {
-    font-size: 18px;
-    font-weight: bold;
-    text-align: up;
-  }
-  .name4,
-  .name5,
-  .name6 {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .description-item {
-    font-size: 12px;
-    width: 220px;
-    height: 77px;
-  }
-  .section-portfolio {
-    margin-top: 6px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 100%;
-    height: 900px;
-    background-color: #2d303a;
-    color: #666d89;
-    padding: 60px 40px 0px 40px;
-  }
-  .section-header1 {
-    width: 100%;
-    height: 100px;
-  }
-  .filter-list {
-    display: flex;
-    flex-direction: row;
-    width: 400px;
-    font-size: 12px;
-    justify-content: start;
-  }
-  .btn {
-    padding: 1px 6px;
-    margin: 5px;
-    width: auto;
-    border: 1px solid #767e9e;
-    color: #767e9e !important;
-    border-radius: 5px;
-    font-size: 12px;
-    height: 22px;
-  }
-  .btn.text {
-    position: absolute;
-    align-items: center;
-  }
-  .active-button {
-    background-color: #2d303a !important;
-    border: 1px solid #bbbbbb;
-    color: #bbbbbb !important;
-  }
-  .portfolio {
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  .description-portfolio {
-    color: #767e9e;
-    width: auto;
-    height: 47px;
-    font-size: 18px;
-  }
-  .show {
-    display: block !important;
-  }
-  .picport {
-    padding-left: 0px;
-    margin-top: 18px;
-    width: 940px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
-  .pic-portfolio {
-    display: none;
-  }
-
-  .pic-portfolio img {
-    margin-top: 5px;
-    width: 220px;
-  }
-
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-  .modal-content {
-    position: relative;
-    top: 500px;
-    margin: auto;
-    display: block;
-    width: 100%;
-    max-width: 1000px;
-    border-radius: 40px;
-    border: 5px solid white;
-  }
-  .modal-content,
-  #caption {
-    animation-name: zoom;
-    animation-duration: 0.6s;
-  }
-  @keyframes zoom {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .section-about-us {
-    margin-top: 6px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 730px;
-    background-color: #f2f2f2;
-    color: #666d89;
-    padding: 60px 40px 50px 40px;
-  }
-  .section-header2 {
-    width: 936px;
-  }
-  .about {
-    width: 130px;
-    height: 40px;
-    font-size: 30px;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  .description-about-us {
-    color: #767e9e;
-    width: 940px;
-    font-size: 18px;
-  }
-  .box-container3 {
-    width: 940px;
-    flex-direction: row;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-  }
-  .profile {
-    height: 423px;
-    width: 300px;
-  }
-  .photo {
-    height: 300px;
-    width: 300px;
-  }
-  .pname {
-    font-size: 18px;
-    padding-top: 17px;
-  }
-  .pdescription {
-    font-size: 12px;
-    padding-top: 7px;
-  }
-  .icons {
-    padding-top: 10px;
-    color: #666d89;
-  }
-  .section-contact {
-    margin-top: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    background-color: #f06c64;
-    padding: 60px 40px 60px 40px;
-  }
-  .section-header-contact {
-    width: 936px;
-    justify-content: center;
-  }
-  .description-contact {
-    font-size: 18px;
-    font-weight: 300, light;
-    color: #f0d8d9;
-  }
-  .info-box {
-    width: 930px;
-    flex-direction: row;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding-top: 57px;
-  }
-  .contact-form {
-    display: flex;
-    flex-wrap: wrap;
-    width: 620px;
-  }
-  input::placeholder,
-  textarea::placeholder {
-    padding-left: 10px;
-    color: #f48c8f !important;
-    font-family: 'Lato', sans-serif !important;
-    outline: none;
-  }
-  input {
-    outline: 1px solid white;
-    width: 620px;
-    height: 38px;
-    border-radius: 5px;
-    color: #f48c8f;
-    background-color: #d6564f;
-    border: none;
-    font-size: 12px;
-    margin-top: 10px;
-  }
-  textarea {
-    outline: 1px solid white;
-    width: 620px;
-    height: 159px;
-    color: #f48c8f;
-    background-color: #d6564f;
-    border: none;
-    font-size: 12px;
-    margin-top: 10px;
-  }
-  button {
-    width: 136px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: #fbc65f;
-    font-size: 14px;
-    justify-content: center;
-    border: none;
-    margin-top: 10px;
-  }
-  .contact-info {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    width: 300px;
-    height: 199px;
-  }
-  .contact {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  .adress-info {
-    width: 150px;
-    height: 85px;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    padding-top: 20px;
-  }
-  .main-adress,
-  .main-tel,
-  .main-email {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    height: 19px;
-    font-size: 12px;
-  }
-  .main-adress img {
-    margin-right: 10px;
-    height: 12px;
-    width: 8px;
-  }
-  .main-tel img {
-    margin-right: 10px;
-    height: 12px;
-    width: 8px;
-  }
-  .main-email img {
-    margin-right: 10px;
-    height: 12px;
-    width: 8px;
-  }
-  @media only screen and (max-width: 768px) {
-    .global {
-      box-sizing: border-box;
-      margin: 0 auto;
-      color: #e5e5e5;
-      font-family: 'Lato', sans-serif;
-      width: 768px;
-      height: auto;
-      border: 1px solid gray;
-      background-size: cover;
-      position: relative;
-      overflow-x: hidden;
-    }
-    header {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .title {
-      width: auto;
-      justify-content: flex-start;
-    }
-    .burger-menu {
-      width: 438px;
-    }
-    .slider {
-      max-width: 100%;
-      position: relative;
-      width: 100%;
-      height: 450px;
-      margin-bottom: 130px;
-      margin: auto;
-    }
-    .slider .item img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-    .item {
-      height: 450px;
-    }
-    .section-our-service {
-      justify-content: space-evenly;
-      height: 700px;
-      width: 100%;
-    }
-    .section-header {
-      width: 100%;
-      align-items: center;
-      justify-content: space-evenly;
-      height: auto;
-    }
-    .description-our-services {
-      width: auto;
-    }
-    .section-portfolio {
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 100%;
-      height: 1100px;
-      justify-content: space-between;
-      align-content: flex-start;
-    }
-    .section-header1 {
-      width: 100%;
-      height: auto;
-    }
-    .description-portfolio {
-      height: auto;
-    }
-
-    .modal-content {
-      width: 100%;
-    }
-    .section-about-us {
-      justify-content: space-evenly;
-      width: 100%;
-      height: auto;
-    }
-    .section-header2 {
-      width: 688px;
-    }
-    .description-about-us {
-      color: #767e9e;
-      width: 688px;
-      font-size: 18px;
-    }
-    .box-container3 {
-      width: 688px;
-      height: auto;
-      flex-direction: row;
-      justify-content: space-around;
-      padding-top: 18px;
-    }
-    .profile {
-      width: 218px;
-    }
-    .photo {
-      height: 218px;
-      width: 218px;
-    }
-    .photo img {
-      height: 218px;
-      width: 218px;
-    }
-
-    .section-contact {
-      width: 100%;
-    }
-    .section-header-contact {
-      width: 690px;
-    }
-    .description-contact {
-      width: auto;
-    }
-    .info-box {
-      width: 690px;
-      flex-direction: row;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-      padding-top: 57px;
-    }
-    .contact-form {
-      display: flex;
-      flex-wrap: wrap;
-      width: 445px;
-    }
-    input {
-      width: 445px;
-      height: 38px;
-    }
-    textarea {
-      width: 445px;
-      height: 159px;
-      margin-top: 10px;
-    }
-    .contact-info {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      padding-left: 20px;
-      width: 300px;
-      height: 199px;
-    }
-    .contact {
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .adress-info {
-      width: 150px;
-      height: 85px;
-      display: flex;
-      flex-wrap: nowrap;
-      flex-direction: column;
-      padding-top: 20px;
-    }
-    .main-adress,
-    .main-tel,
-    .main-email {
-      display: flex;
-      flex-wrap: nowrap;
-      flex-direction: row;
-      height: 19px;
-      font-size: 12px;
-    }
-    .main-adress img {
-      margin-right: 10px;
-      height: 12px;
-      width: 8px;
-    }
-    .main-tel img {
-      margin-right: 10px;
-      height: 12px;
-      width: 8px;
-    }
-    .main-email img {
-      margin-right: 10px;
-      height: 12px;
-      width: 8px;
-    }
-  }
-  @media only screen and (max-width: 375px) {
-    .global {
-      width: 375px;
-    }
-
-    .title {
-      margin-left: 20px;
-    }
-    header {
-      position: sticky;
-      z-index: 1000;
-      top: 0;
-      display: flex;
-      width: 375px;
-      height: 70px;
-      flex-direction: row-reverse;
-      align-items: center;
-      justify-content: flex-start;
-      padding-left: 0px;
-      padding-right: 134px;
-    }
-    .title {
-      padding-top: 10px;
-      width: auto;
-      font-size: 19px;
-      margin-left: 30px;
-    }
-    .burger-menu_button {
-      position: relative;
-      z-index: 10;
-      width: 10px;
-      height: 50px;
-      -webkit-transition: 0.4s;
-      -moz-transition: 0.4s;
-      -o-transition: 0.4s;
-      transition: 0.4s;
-    }
-    .burger-menu_button:hover .burger-menu_lines {
-      filter: brightness(0.7);
-    }
-
-    .burger-menu_button:hover {
-      background-color: #2d303a;
-    }
-
-    .burger-menu_lines::before,
-    .burger-menu_lines::after,
-    .burger-menu_lines {
-      position: absolute;
-      width: 30px;
-      height: 3px;
-      background-color: #e5e5e5;
-      -webkit-transition: 0.4s;
-      -moz-transition: 0.4s;
-      -o-transition: 0.4s;
-      transition: 0.4s;
-    }
-    .burger-menu_lines {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .burger-menu_lines::before {
-      content: '';
-      top: -12px;
-    }
-    .burger-menu_lines::after {
-      content: '';
-      top: 12px;
-    }
-
-    .burger-menu_active .burger-menu_lines {
-      background-color: transparent;
-    }
-    .burger-menu_active .burger-menu_lines::before {
-      top: 0;
-      transform: rotate(45deg);
-    }
-    .burger-menu_active .burger-menu_lines::after {
-      top: 0;
-      transform: rotate(-45deg);
-    }
-    .burger-menu_nav {
-      padding-right: 0px;
-      position: fixed;
-      top: 70px;
-      z-index: 30;
-      display: flex;
-      flex-flow: column;
-      height: 812px;
-      width: 280px;
-      background-color: #2d303a;
-      overflow-y: auto;
-      left: 0;
-      left: -100%;
-      -webkit-transition: 0.8s;
-      -moz-transition: 0.8s;
-      -o-transition: 0.8s;
-      transition: 0.8s;
-    }
-    .burger-menu_active .burger-menu_nav {
-      left: 0;
-      right: 0;
-      -webkit-transition: 0.4s;
-      -moz-transition: 0.4s;
-      -o-transition: 0.4s;
-      transition: 0.4s;
-    }
-    .burger-menu_link {
-      padding: 18px 40px;
-      font-size: 18px;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      font-weight: 400;
-      color: #e5e5e5;
-      border-bottom: 1px solid #2d303a;
-    }
-    .burger-menu_link:first-child {
-      border-top: 1px solid #2d303a;
-    }
-    .burger-menu_link:hover {
-      filter: brightness(0.9);
-    }
-    .burger-menu_overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 10;
-    }
-    .burger-menu_active .burger-menu_overlay {
-      display: block;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .slider {
-      max-width: 100%;
-      position: relative;
-      width: 100%;
-      height: 218px;
-      margin-bottom: auto;
-      margin: auto;
-    }
-    .slider .item img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-    .item {
-      height: 218px;
-    }
-    .slider-dots {
-      display: none;
-    }
-
-    .section-our-service {
-      justify-content: space-evenly;
-      height: 1000px;
-      width: 100%;
-      padding: 30px 20px 30px 20px;
-    }
-    .section-header {
-      width: 100%;
-      align-items: center;
-      justify-content: space-evenly;
-      height: auto;
-    }
-    .description-our-services {
-      width: auto;
-    }
-    .section-portfolio {
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 100%;
-      height: 844px;
-      justify-content: space-between;
-      align-content: flex-start;
-      padding: 30px 30px 30px 30px;
-    }
-    .section-header1 {
-      width: 100%;
-      height: auto;
-    }
-    .filter-list {
-      padding-top: 15px;
-    }
-    .pic-portfolio img {
-      width: 150px;
-      height: 127px;
-      padding-top: 5px;
-    }
-    .modal-content {
-      width: 100%;
-    }
-    #myImg,
-    #myImg3,
-    #myImg6,
-    #myImg11 {
-      display: none;
-    }
-    .btn {
-      margin: 2px;
-      width: auto;
-    }
-    .section-about-us {
-      display: flex;
-      justify-content: flex-start;
-      width: 100%;
-      height: 1690px;
-      padding: 30px 30px 30px 30px;
-    }
-    .section-header2 {
-      width: 315px;
-    }
-    .description-about-us {
-      color: #767e9e;
-      width: 315px;
-      height: auto;
-      font-size: 18px;
-    }
-    .box-container3 {
-      width: 315px;
-      height: auto;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-content: center;
-      justify-content: space-around;
-    }
-    .profile {
-      margin-top: 18px;
-      width: 314px;
-      height: 440px;
-    }
-    .photo {
-      height: 314px;
-      width: 314px;
-    }
-    .photo img {
-      height: 314px;
-      width: 314px;
-    }
-
-    .section-contact {
-      justify-content: flex-start;
-      width: 100%;
-      height: 970px;
-      padding: 30px 30px 30px 30px;
-    }
-    .section-header-contact {
-      width: 314px;
-      height: auto;
-    }
-    .description-contact {
-      width: 314px;
-    }
-    .info-box {
-      width: 314px;
-      flex-direction: column;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-    }
-    .contact-form {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      width: 314px;
-    }
-    input {
-      width: 314px;
-      height: 18px;
-      margin-top: 5px;
-    }
-    textarea {
-      width: 314px;
-      height: 159px;
-      margin-top: 5px;
-    }
-    button {
-      width: 314px;
-      height: 50px;
-    }
-    .contact-info {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: column;
-      width: 315px;
-      height: auto;
-    }
-    .contact {
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .adress-info {
-      width: 150px;
-      height: 72px;
-      display: flex;
-      flex-wrap: nowrap;
-      flex-direction: column;
-      padding-top: 20px;
-    }
-    .main-adress,
-    .main-tel,
-    .main-email {
-      display: flex;
-      flex-wrap: nowrap;
-      flex-direction: row;
-      height: 19px;
-      font-size: 12px;
-    }
-    .main-adress img {
-      margin-right: 10px;
-      height: 12px;
-      width: 8px;
-    }
-    .main-tel img {
-      margin-right: 10px;
-      height: 12px;
-      width: 8px;
-    }
-    .main-email img {
-      margin-right: 10px;
-      height: 12px;
-      width: 8px;
-    }
-  }
-</style>
 <div class="global">
   <header>
     <h1 class="title">
@@ -1013,25 +19,25 @@
     </div>
   </header>
   <section class="slider">
-    <div class="item">
-      <img src="./images/images_slide/1.jpeg" alt="1" />
-    </div>
-
-    <div class="item">
-      <img src="./images/images_slide/2.jpeg" alt="2" />
-    </div>
-
-    <div class="item">
-      <img src="./images/images_slide/3.jpeg" alt="3" />
-    </div>
-    <div class="slider-dots">
-      <span class="slider-dots_item" onclick="currentSlide(1)"></span>
-      <span class="slider-dots_item" onclick="currentSlide(2)"></span>
-      <span class="slider-dots_item" onclick="currentSlide(3)"></span>
-    </div>
-    <a class="prev" onclick="minusSlide()">&#10094;</a>
-    <a class="next" onclick="plusSlide()">&#10095;</a>
+  <ngb-carousel #ngcarousel>
+    <ng-template ngbSlide id="one">
+      <div class="item">
+        <img src="/assets/images/images_slide/1.jpeg" alt="Slide 1" />
+      </div>
+    </ng-template>
+    <ng-template ngbSlide id="two">
+      <div class="item">
+        <img src="/assets/images/images_slide/2.jpeg" alt="Slide 2" />
+      </div>
+      </ng-template>
+      <ng-template ngbSlide id="three">
+        <div class="item">
+          <img src="/assets/images/images_slide/3.jpeg" alt="Slide 3" />
+        </div>
+      </ng-template>
+  </ngb-carousel>
   </section>
+
   <section class="section-our-service">
     <div class="section-header">
       <h1 class="name">Our Services</h1>
@@ -1043,7 +49,7 @@
     </div>
     <div class="services-list">
       <div class="service-item-1">
-        <img src="./images/icon/services-item-1.png" alt="icon1" />
+        <img src="/assets/images/icon/services-item-1.png" alt="icon1" />
         <div class="service-item-text">
           <div class="name1">Custom Design</div>
           <div class="description-item">
@@ -1053,7 +59,7 @@
       </div>
 
       <div class="service-item-2">
-        <img src="./images/icon/services-item-2.png" alt="icon2" />
+        <img src="/assets/images/icon/services-item-2.png" alt="icon2" />
         <div class="service-item-text">
           <div class="name2">Inovate Ideas</div>
           <div class="description-item">
@@ -1063,7 +69,7 @@
       </div>
 
       <div class="service-item-3">
-        <img src="./images/icon/services-item-3.png" alt="icon3" />
+        <img src="/assets/images/icon/services-item-3.png" alt="icon3" />
         <div class="service-item-text">
           <div class="name3">Love Is The Answer</div>
           <div class="description-item">
@@ -1073,7 +79,7 @@
       </div>
 
       <div class="service-item-4">
-        <img src="./images/icon/services-item-4.png" alt="icon4" />
+        <img src="/assets/images/icon/services-item-4.png" alt="icon4" />
         <div class="service-item-text">
           <div class="name4">Responsive Layout</div>
           <div class="description-item">
@@ -1083,7 +89,7 @@
       </div>
 
       <div class="service-item-5">
-        <img src="./images/icon/services-item-5.png" alt="icon5" />
+        <img src="/assets/images/icon/services-item-5.png" alt="icon5" />
         <div class="service-item-text">
           <div class="name5">24 / 7 Support</div>
           <div class="description-item">
@@ -1094,7 +100,7 @@
       </div>
 
       <div class="service-item-6">
-        <img src="./images/icon/services-item-6.png" alt="icon6" />
+        <img src="/assets/images/icon/services-item-6.png" alt="icon6" />
         <div class="service-item-text">
           <div class="name6">Feel Like A Star</div>
           <div class="description-item">
@@ -1119,40 +125,40 @@
     </div>
     <div class="picport">
       <div class="pic-portfolio webdesign">
-        <img id="myImg" class="test1" src="./images/image_portfolio/portfolio-1.png" alt="port1" />
+        <img id="myImg" class="test1" src="/assets/images/image_portfolio/portfolio-1.png" alt="port1" />
       </div>
       <div class="pic-portfolio webdesign">
-        <img id="myImg2" class="test1" src="./images/image_portfolio/portfolio-2.png" alt="port2" />
+        <img id="myImg2" class="test1" src="/assets/images/image_portfolio/portfolio-2.png" alt="port2" />
       </div>
       <div class="pic-portfolio webdesign">
-        <img id="myImg3" class="test1" src="./images/image_portfolio/portfolio-3.png" alt="port3" />
+        <img id="myImg3" class="test1" src="/assets/images/image_portfolio/portfolio-3.png" alt="port3" />
       </div>
       <div class="pic-portfolio graphicdesign">
-        <img id="myImg4" class="test1" src="./images/image_portfolio/portfolio-4.png" alt="port4" />
+        <img id="myImg4" class="test1" src="/assets/images/image_portfolio/portfolio-4.png" alt="port4" />
       </div>
       <div class="pic-portfolio graphicdesign">
-        <img id="myImg5" class="test1" src="./images/image_portfolio/portfolio-5.png" alt="port5" />
+        <img id="myImg5" class="test1" src="/assets/images/image_portfolio/portfolio-5.png" alt="port5" />
       </div>
       <div class="pic-portfolio graphicdesign">
-        <img id="myImg6" class="test1" src="./images/image_portfolio/portfolio-6.png" alt="port6" />
+        <img id="myImg6" class="test1" src="/assets/images/image_portfolio/portfolio-6.png" alt="port6" />
       </div>
       <div class="pic-portfolio artwork">
-        <img id="myImg7" class="test1" src="./images/image_portfolio/portfolio-7.png" alt="port7" />
+        <img id="myImg7" class="test1" src="/assets/images/image_portfolio/portfolio-7.png" alt="port7" />
       </div>
       <div class="pic-portfolio artwork">
-        <img id="myImg8" class="test1" src="./images/image_portfolio/portfolio-8.png" alt="port8" />
+        <img id="myImg8" class="test1" src="/assets/images/image_portfolio/portfolio-8.png" alt="port8" />
       </div>
       <div class="pic-portfolio artwork">
-        <img id="myImg9" class="test1" src="./images/image_portfolio/portfolio-9.png" alt="port9" />
+        <img id="myImg9" class="test1" src="/assets/images/image_portfolio/portfolio-9.png" alt="port9" />
       </div>
       <div class="pic-portfolio webdesign">
-        <img id="myImg10" class="test1" src="./images/image_portfolio/portfolio-10.png" alt="port10" />
+        <img id="myImg10" class="test1" src="/assets/images/image_portfolio/portfolio-10.png" alt="port10" />
       </div>
       <div class="pic-portfolio graphicdesign">
-        <img id="myImg11" class="test1" src="./images/image_portfolio/portfolio-11.png" alt="port11" />
+        <img id="myImg11" class="test1" src="/assets/images/image_portfolio/portfolio-11.png" alt="port11" />
       </div>
       <div class="pic-portfolio artwork">
-        <img id="myImg12" class="test1" src="./images/image_portfolio/portfolio-12.png" alt="port12" />
+        <img id="myImg12" class="test1" src="/assets/images/image_portfolio/portfolio-12.png" alt="port12" />
       </div>
       <div id="myModal" class="modal">
         <span class="close">&times;</span>
@@ -1172,7 +178,7 @@
     </div>
     <div class="box-container3">
       <div class="profile">
-        <div class="photo"><img src="./images/images_about/photo-1.png" alt="photo1" /></div>
+        <div class="photo"><img src="/assets/images/images_about/photo-1.png" alt="photo1" /></div>
         <div class="pname"><b>Adam Jensen</b></div>
         <div class="pdescription">
           Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.
@@ -1186,7 +192,7 @@
       </div>
 
       <div class="profile">
-        <div class="photo"><img src="./images/images_about/photo-2.png" alt="photo2" /></div>
+        <div class="photo"><img src="/assets/images/images_about/photo-2.png" alt="photo2" /></div>
         <div class="pname"><b>Desmond Miles</b></div>
         <div class="pdescription">
           Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.
@@ -1199,7 +205,7 @@
         </div>
       </div>
       <div class="profile">
-        <div class="photo"><img src="./images/images_about/photo-3.png" alt="photo3" /></div>
+        <div class="photo"><img src="/assets/images/images_about/photo-3.png" alt="photo3" /></div>
         <div class="pname"><b>Scolara Visari</b></div>
         <div class="pdescription">
           Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.
@@ -1240,15 +246,15 @@
         </div>
         <div class="adress-info">
           <div class="main-adress">
-            <img src="./images/images_contact/ico-location.png" alt="location" />
+            <img src="/assets/images/images_contact/ico-location.png" alt="location" />
             <div class="text-adress">Elm St. 14/05 LostCity</div>
           </div>
           <div class="main-tel">
-            <img src="./images/images_contact/ico-phone.png" alt="telephone" />
+            <img src="/assets/images/images_contact/ico-phone.png" alt="telephone" />
             <div class="text-tel">035283318635</div>
           </div>
           <div class="main-email">
-            <img src="./images/images_contact/ico-mail.png" alt="e-mail" />
+            <img src="/assets/images/images_contact/ico-mail.png" alt="e-mail" />
             <div class="text-email">info@singolo.com</div>
           </div>
         </div>
