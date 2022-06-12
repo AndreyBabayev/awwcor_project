@@ -1,16 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-service',
   template:
-    `
-    id: {{cardId}}, 
+    `id: {{cardId}}, 
      title: {{cardTitle}}, 
      description: {{cardDescription}},
      image: {{cardImg}}`
-
 })
-export class CardServiceComponent {
+export class CardServiceComponent implements OnInit{
   @Input() cardId: number = 0;
   @Input() cardTitle: string = "";
   @Input() cardDescription: string = "";
@@ -19,6 +17,7 @@ export class CardServiceComponent {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

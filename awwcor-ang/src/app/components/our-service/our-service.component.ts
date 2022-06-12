@@ -6,15 +6,14 @@ interface Cards {
   description: string,
   image: string,
 }
-
 @Component({
   selector: 'app-our-service',
   template:
     `<app-card-service
-   [cardId]="id" 
-   [cardTitle]="title" 
-   [cardDescription]="description" 
-   [cardImg]="image">
+  [cardId]=0
+   [cardTitle]="'title'" 
+   [cardDescription]="'description'"
+   [cardImg]="'image'">
    </app-card-service>`
 })
 export class OurServiceComponent implements OnInit {
