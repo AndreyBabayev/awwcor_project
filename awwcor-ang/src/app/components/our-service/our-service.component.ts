@@ -1,28 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Card } from 'src/app/models/interfaces.models';
 
-interface Cards {
-  id: number,
-  title: string,
-  description: string,
-  image: string,
-}
 @Component({
   selector: 'app-our-service',
-  template:
-    `<app-card-service
-  [cardId]=0
-   [cardTitle]="'title'" 
-   [cardDescription]="'description'"
-   [cardImg]="'image'">
-   </app-card-service>`
-})
+  templateUrl: './our-service.component.html',
+  styleUrls: ['./our-service.component.css'],
+  })
 export class OurServiceComponent implements OnInit {
-  cards: Cards[] =
+  cards: Card[] =
     [
       {
         id: 0,
         title: 'Custom Design',
-        description: ' Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
+        description: ' Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.',
         image: '/assets/images/icon/services-item-1.png'
       },
       {
@@ -55,12 +45,7 @@ export class OurServiceComponent implements OnInit {
         image: '/assets/images/icon/services-item-6.png'
       }
     ]
-
-
   constructor() { }
-
   ngOnInit(): void {
-
   }
-
 }

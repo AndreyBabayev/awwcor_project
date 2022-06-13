@@ -14,21 +14,26 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CardServiceComponent } from './components/our-service/card-service/card-service.component';
+import { CardPortfolioComponent } from './components/portfolio/card-portfolio/card-portfolio.component';
+import { ModalNavComponent } from './components/modal-nav/modal-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-      PortfolioComponent,
+    PortfolioComponent,
     NavbarComponent,
     OurServiceComponent,
     AboutUsComponent,
     ContactsComponent,
     FooterComponent,
     SliderComponent,
-    CardServiceComponent
+    CardServiceComponent,
+    CardPortfolioComponent,
+    ModalNavComponent
   ],
   imports: [
     BrowserModule,
+    
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,

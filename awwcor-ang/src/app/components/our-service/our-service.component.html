@@ -7,5 +7,8 @@
       condimentum nibh.
     </div>
   </div>
-  <app-card-service [id] = id [title] = "title" [description] = "description" [image] = "image"></app-card-service>
- </section>
+  <!-- <app-card-service [id] = id [title] = "title" [description] = "description" [image] = "image"></app-card-service> -->
+  <div class="section-our-service__item">
+<ng-container *ngFor="let card of cards"><app-card-service [card]="card" ></app-card-service></ng-container>
+ </div>
+</section>
