@@ -1,12 +1,14 @@
 <div class="global">
+  <app-layout>
     <mat-sidenav-container>
       <mat-sidenav #sidenav role="navigation">
         <app-modal-nav (sidenavClose)="sidenav.close()"></app-modal-nav>
       </mat-sidenav>
       <mat-sidenav-content>
-        <app-vav-bar (sidenavToggle)="sidenav.toggle()"></app-nav-bar>
-       </mat-sidenav-content>
+        <app-nav-bar (sidenavToggle)="sidenav.toggle()"></app-nav-bar>
+      </mat-sidenav-content>
     </mat-sidenav-container>
+  </app-layout>
   <app-slider></app-slider>
   <app-our-service></app-our-service>
   <app-portfolio></app-portfolio>
@@ -14,4 +16,3 @@
   <app-contacts></app-contacts>
   <app-footer></app-footer>
 </div>
-

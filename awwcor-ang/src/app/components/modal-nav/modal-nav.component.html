@@ -1,15 +1,22 @@
+<h1 class="title">
+  SINGOLO
+  <p>*</p>
+</h1>
 <mat-nav-list>
-    <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
-        <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
-    </a>
-    <a mat-list-item routerLink="/owner" (click)="onSidenavClose()">
-        <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Owner Actions</span>   
-    </a>
-    <a mat-list-item routerLink="#" (click)="onSidenavClose()">
-        <mat-icon>account_balance</mat-icon><span class="nav-caption">Account Actions</span>
-    </a>
-    <mat-list-item [matMenuTriggerFor]="menu">
-        <mat-icon>unfold_more</mat-icon>
-        
-    </mat-list-item>
-   </mat-nav-list>
+  <a mat-list-item href="#home" (click)="onSidenavClose()">
+    <span class="nav-caption">HOME</span>
+  </a>
+  <a mat-list-item href="#services" (click)="onSidenavClose()">
+    <span class="nav-caption">SERVICES</span>
+  </a>
+  <a mat-list-item href="#portfolio" (click)="onSidenavClose()">
+    <span class="nav-caption">PORTFOLIO</span>
+  </a>
+  <a mat-list-item href="#about" (click)="onSidenavClose()">
+    <span class="nav-caption">ABOUT</span>
+  </a>
+  <a mat-list-item href="#contact" (click)="onSidenavClose()">
+    <span class="nav-caption">CONTACT</span>
+  </a>
+  <mat-list-item [matMenuTriggerFor]="menu"></mat-list-item>
+</mat-nav-list>
