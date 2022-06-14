@@ -1,23 +1,50 @@
-  <header>
-    <h1 class="title">
-      SINGOLO
-      <p>*</p>
-    </h1>
-    <mat-toolbar color="primary">
-      <div fxHide.gt-xs>
-        <button mat-icon-button (click)="onToggleSidenav()">
-            <mat-icon>menu</mat-icon>
-        </button>
+<header>
+  <h1 class="title">
+    SINGOLO
+    <p>*</p>
+  </h1>
+  <mat-toolbar color="primary">
+    <div class="mat-icon-button">
+      <button mat-icon-button (click)="modalTest.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
     </div>
-      <nav class="burger-menu_nav">
-        <a href="#home" class="burger-menu_link">HOME</a>
-        <a href="#services" class="burger-menu_link">SERVICES</a>
-        <a href="#portfolio" class="burger-menu_link">PORTFOLIO</a>
-        <a href="#about" class="burger-menu_link">ABOUT</a>
-        <a href="#contact" class="burger-menu_link">CONTACT</a>
-      </nav>
-      </mat-toolbar>
-    </header>
+    <nav class="burger-menu_nav">
+      <a href="#home" class="burger-menu_link">HOME</a>
+      <a href="#services" class="burger-menu_link">SERVICES</a>
+      <a href="#portfolio" class="burger-menu_link">PORTFOLIO</a>
+      <a href="#about" class="burger-menu_link">ABOUT</a>
+      <a href="#contact" class="burger-menu_link">CONTACT</a>
+    </nav>
+  </mat-toolbar>
 
-
-
+  <mat-sidenav-container class="modal" style="margin-top: 70px">
+    <mat-sidenav #modalTest [opened]="false" [mode]="'over'">
+      <mat-nav-list>
+        <a mat-list-item href="#home">
+          <span class="nav-caption">HOME</span>
+        </a>
+        <a mat-list-item href="#services">
+          <span class="nav-caption">SERVICES</span>
+        </a>
+        <a mat-list-item href="#portfolio">
+          <span class="nav-caption">PORTFOLIO</span>
+        </a>
+        <a mat-list-item href="#about">
+          <span class="nav-caption">ABOUT</span>
+        </a>
+        <a mat-list-item href="#contact">
+          <span class="nav-caption">CONTACT</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+   <mat-sidenav-content
+      ><app-slider></app-slider>
+      <app-our-service></app-our-service>
+      <app-portfolio></app-portfolio>
+      <app-about-us></app-about-us>
+      <app-contacts></app-contacts>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</header>

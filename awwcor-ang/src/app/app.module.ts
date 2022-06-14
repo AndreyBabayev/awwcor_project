@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
@@ -39,6 +40,7 @@ import { LayoutComponent } from './components/layout/layout.component';
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
+    MaterialModule
 
   ],
   providers: [],
