@@ -1,18 +1,30 @@
 <div class="global">
-  <!-- <app-layout>
-    <mat-sidenav-container>
-      <mat-sidenav #sidenav role="navigation">
-        <app-modal-nav (sidenavClose)="sidenav.close()"></app-modal-nav>
-      </mat-sidenav>
-    </mat-sidenav-container>
-    <app-nav-bar (sidenavToggle)="sidenav.toggle()"></app-nav-bar>
-  </app-layout> -->
-
-  <app-nav-bar></app-nav-bar>
-  <!-- <app-slider></app-slider>
-  <app-our-service></app-our-service>
-  <app-portfolio></app-portfolio>
-  <app-about-us></app-about-us>
-  <app-contacts></app-contacts>
-  <app-footer></app-footer> -->
+  <app-nav-bar [drawer]="drawer"></app-nav-bar>
+  <mat-drawer-container class="example-container">
+    <mat-drawer #drawer class="example-sidenav" mode="over" style="background-color: #2d303a">
+      <mat-nav-list>
+        <a mat-list-item href="#home">
+          <span class="nav-caption" style="color:#e5e5e5" >HOME</span>
+        </a>
+        <a mat-list-item href="#services">
+          <span class="nav-caption" style="color:#e5e5e5">SERVICES</span>
+        </a>
+        <a mat-list-item href="#portfolio">
+          <span class="nav-caption" style="color:#e5e5e5">PORTFOLIO</span>
+        </a>
+        <a mat-list-item href="#about">
+          <span class="nav-caption" style="color:#e5e5e5">ABOUT</span>
+        </a>
+        <a mat-list-item href="#contact">
+          <span class="nav-caption" style="color:#e5e5e5">CONTACT</span>
+        </a>
+      </mat-nav-list>
+    </mat-drawer>
+    <app-slider></app-slider>
+    <app-our-service></app-our-service>
+    <app-portfolio></app-portfolio>
+    <app-about-us></app-about-us>
+    <app-contacts></app-contacts>
+    <app-footer></app-footer>
+  </mat-drawer-container>
 </div>

@@ -16,8 +16,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CardServiceComponent } from './components/our-service/card-service/card-service.component';
 import { CardPortfolioComponent } from './components/portfolio/card-portfolio/card-portfolio.component';
-import { ModalNavComponent } from './components/modal-nav/modal-nav.component';
-import { LayoutComponent } from './components/layout/layout.component';
+
+
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     SliderComponent,
     CardServiceComponent,
     CardPortfolioComponent,
-    ModalNavComponent,
-    LayoutComponent
+   
+
   ],
   imports: [
     BrowserModule,

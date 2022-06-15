@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
 
 @Component({
@@ -6,18 +6,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavbarComponent implements OnInit {
-  @Output() public sidenavToggle = new EventEmitter();
+export class NavbarComponent {
+@Input() drawer: any;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-public onToggleSideNav = () => {
-  this.sidenavToggle.emit();
+  showFiller = false;
 }
-
-}
+  
 // function burgerMenu(selector) {
 //   let menu = $(selector);
 //   let button = menu.find('.burger-menu_button', '.burger-menu_lines');

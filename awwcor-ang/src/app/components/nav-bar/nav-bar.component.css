@@ -19,7 +19,7 @@ a:active {
 }
 
 header {
-  position: fixed;
+ 
   background-color: #2d303a;
   display: flex;
   flex-direction: row;
@@ -90,10 +90,7 @@ p {
   }
 }
 @media only screen and (max-width: 375px) {
-  .mat-drawer-container {
-    position: fixed;
-  }
-
+ 
   .burger-menu_nav {
     display: none;
   }
@@ -104,8 +101,10 @@ p {
     font-size: 19px;
     margin-left: 30px;
   }
+  a:hover{
+    color: #f06c64 !important;
+  }
   header {
-    position: sticky;
     z-index: 1000;
     top: 0;
     display: flex;
