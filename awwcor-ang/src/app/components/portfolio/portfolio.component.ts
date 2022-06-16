@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Portfolio } from 'src/app/models/interfaces.models';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,9 +8,64 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
+  portfolio: Portfolio[] =
+
+  [{
+    id:0,
+    group: 'pic-portfolio webdesign',
+    image: '../../../assets/images/image_portfolio/portfolio-1.png',
+  },
+  {
+  id:1,
+  group: 'pic-portfolio webdesign',
+  image: '../../../assets/images/image_portfolio/portfolio-2.png',
+},
+{ id:2,
+  group: 'pic-portfolio webdesign',
+  image: '../../../assets/images/image_portfolio/portfolio-3.png',
+},
+{ id:3,
+  group: 'pic-portfolio graphicdesign',
+  image: '../../../assets/images/image_portfolio/portfolio-4.png',
+},
+{ id:4,
+  group: 'pic-portfolio graphicdesign',
+  image: '../../../assets/images/image_portfolio/portfolio-5.png',
+},
+{ id:5,
+  group: 'pic-portfolio graphicdesign',
+  image: '../../../assets/images/image_portfolio/portfolio-6.png',
+},
+{ id:6,
+  group: 'pic-portfolio artwork',
+  image: '../../../assets/images/image_portfolio/portfolio-7.png',
+},
+{ id:7,
+  group: 'pic-portfolio artwork',
+  image: '../../../assets/images/image_portfolio/portfolio-8.png',
+},
+{ id:8,
+  group: 'pic-portfolio artwork',
+  image: '../../../assets/images/image_portfolio/portfolio-9.png',
+},
+{ id:9,
+  group: 'pic-portfolio webdesign',
+  image: '../../../assets/images/image_portfolio/portfolio-10.png',
+},
+{ id:10,
+  group: 'pic-portfolio graphicdesign',
+  image: '../../../assets/images/image_portfolio/portfolio-11.png',
+},
+{ id:11,
+  group: 'pic-portfolio artwork',
+  image: '../../../assets/images/image_portfolio/portfolio-12.png',
+},
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log (this.portfolio);
   }
 }
 

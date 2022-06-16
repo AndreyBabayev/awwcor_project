@@ -5,3 +5,9 @@ export interface Card {
     description: string,
     image: string,
 }
+
+export interface Portfolio{
+    id: number,
+    group: string,
+    image: string,
+}

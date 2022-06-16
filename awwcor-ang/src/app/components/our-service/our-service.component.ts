@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { Card } from 'src/app/models/interfaces.models';
 
 @Component({
