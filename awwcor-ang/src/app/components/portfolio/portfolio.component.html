@@ -5,18 +5,16 @@
       Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
     </div>
   </div>
-
-  <mat-chip-list aria-label="filter-list" id="filter-list">
-    <mat-chip>All</mat-chip>
-    <mat-chip>Wed Design</mat-chip>
-    <mat-chip>Graphic Design</mat-chip>
-    <mat-chip>Artwork</mat-chip>
-  </mat-chip-list>
-
+  <mat-chip-list aria-label="filter-list" id="filter-list" [multiple]="true"
+  selectable>
+      <mat-chip *ngFor="let option of options"
+    (click)="toggleChip(option)"
+   [selected]="chips.has(option)">{{ option.label }}</mat-chip>
+</mat-chip-list>
+ 
   <section class="portfolio-service">
-    <div class="portfolio-item-univ" *ngIf="portfolio">
-      <div class="group-univ">{{portfolio.group}}</div>
-      <img [src]="portfolio.image" alt="img-univ" />
+    <div class="portfolio-item-univ" *ngFor ="let item of filterPortfolio">
+     <img [src]="item.image" alt="img-univ" mat-button(click)="openDialog()"/>
     </div>
   </section>
 

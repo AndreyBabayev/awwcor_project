@@ -20,7 +20,7 @@
   font-size: 12px;
   justify-content: start;
 }
-.btn {
+.mat-chip {
   padding: 1px 6px;
   margin: 5px;
   width: auto;
@@ -34,11 +34,11 @@
   position: absolute;
   align-items: center;
 }
-.active-button {
+/* .active-mat-chip {
   background-color: #2d303a !important;
   border: 1px solid #bbbbbb;
   color: #bbbbbb !important;
-}
+} */
 .portfolio {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -51,7 +51,7 @@
 .show {
   display: block !important;
 }
-.picport {
+.portfolio-service {
   padding-left: 0px;
   margin-top: 18px;
   width: 940px;

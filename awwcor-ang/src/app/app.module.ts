@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
@@ -15,7 +16,6 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { CardServiceComponent } from './components/our-service/card-service/card-service.component';
-
 
 
 @NgModule({
@@ -29,14 +29,14 @@ import { CardServiceComponent } from './components/our-service/card-service/card
     FooterComponent,
     SliderComponent,
     CardServiceComponent,
-   
-
   ],
   imports: [
     BrowserModule,
-    
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     NgbModule,
+
     BrowserAnimationsModule,
     MaterialModule
 
