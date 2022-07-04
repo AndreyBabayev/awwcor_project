@@ -7,8 +7,8 @@ footer {
   height: 76px;
   justify-content: center;
 }
-a {
-  color: aliceblue;
+.a img:hover {
+  color: #f06c64 !important;
 }
 
 @media only screen and (max-width: 768px) {

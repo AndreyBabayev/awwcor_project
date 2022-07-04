@@ -47,9 +47,9 @@
   font-size: 12px;
   padding-top: 7px;
 }
-.icons {
+.icons img {
   padding-top: 10px;
-  color: #666d89;
+  color: #666d89 !important;
 }
 @media only screen and (max-width: 768px) {
   .section-about-us {

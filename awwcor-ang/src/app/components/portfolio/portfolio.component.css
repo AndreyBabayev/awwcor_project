@@ -67,7 +67,19 @@
   margin-top: 5px;
   width: 220px;
 }
+::ng-deep.mat-dialog-container {
+padding: 0 !important;
 
+}
+.mat-dialog-content {
+}
+
+.img-modal {
+  width: 500px;
+  height: 500px;
+  position: fixed;
+  align-content: center;
+}
 .modal {
   display: none;
   position: fixed;
@@ -103,7 +115,7 @@
     transform: scale(1);
   }
 }
-.close {
+.button mat-button mat-dialog-close {
   position: absolute;
   top: 15px;
   right: 35px;

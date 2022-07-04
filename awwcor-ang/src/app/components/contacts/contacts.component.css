@@ -36,6 +36,7 @@
     font-family: 'Lato', sans-serif !important;
     outline: none;
   }
+
   input {
     outline: 1px solid white;
     width: 620px;
@@ -47,6 +48,10 @@
     font-size: 12px;
     margin-top: 10px;
   }
+  .mat-drawer-container{
+    color: #fafafa !important;
+  }
+
   textarea {
     outline: 1px solid white;
     width: 620px;

@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Portfolio } from 'src/app/models/interfaces.models';
 import { FormBuilder, FormControl } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-
-
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { identifierName } from '@angular/compiler';
 
 @Component({
   selector: 'app-portfolio',
@@ -11,61 +10,48 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./portfolio.component.css']
 })
 
-
-@Component({
-  selector: 'portfolio-modal',
-  templateUrl: 'portfolio-modal.html',
-})
-export class PorfolioModal { }
-
-
 export class PortfolioComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
-
-  openDialog() {
-    this.dialog.open(PortfolioModal);
-  }
-}
-
-// options = ["All", "Wed Design", "Graphic Design", "Artwork"];
-
 options = [
-  { label: "All", key: "" },
+  { label: "All", key: ""},
   { label: "Wed Design", key: "webdesign" },
   { label: "Graphic Design", key: "graphicdesign" },
   { label: "Artwork", key: "artwork" }
 ];
-
 chipControl = new FormControl(new Set());
 
-constructor(private fb: FormBuilder) { }
+constructor(private fb: FormBuilder, public dialog: MatDialog) {}
+
+openDialog (item:any) {
+  this.dialog.open(PorfolioModal,{
+    data:{
+      sendingdata: item
+        },
+    width: '500px' ,
+    height: '500px'
+ }  )
+};
 
 toggleChip = (chip: any) => {
   const addChip = () => { this.chips.add(chip); };
   const removeChip = () => { this.chips.delete(chip); };
-
+  
   this.chips.has(chip) ? removeChip() : addChip();
   console.log(this.chips)
   console.log(chip)
 
   this.filterPortfolio = this.portfolio.filter((item) => {
     return item.group === chip.key
-
+   
   })
-
 }
   get chips() { return this.chipControl.value; }
-
 filterPortfolio: Portfolio[] = [
-
 ]
 
 ngOnInit(): void {
   this.filterPortfolio = this.portfolio
-
 }
-
 portfolio: Portfolio[] = [
   {
     id: 0,
@@ -129,7 +115,8 @@ portfolio: Portfolio[] = [
   },
 ]
 
-  // window.onclick = function (event) {
+
+// window.onclick = function (event) {
   //   let modal = document.querySelector('.modal');
   //   let span = document.getElementsByClassName('close');
   //   let bigImage = document.querySelector('.modal-content');
@@ -196,4 +183,14 @@ portfolio: Portfolio[] = [
   //     modal.show();
   //   });
   // });
+}
+@Component({
+  selector: 'portfolio-modal',
+  templateUrl: 'portfolio-modal.html',
+  styleUrls: ['./portfolio.component.css']
+})
+
+export class PorfolioModal {
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 }
