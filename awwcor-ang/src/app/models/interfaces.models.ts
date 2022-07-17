@@ -8,6 +8,7 @@ export interface Card {
 
 export interface Portfolio{
     id: number,
+    name: string,
     group: string,
     image: string,
 }

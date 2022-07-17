@@ -12,111 +12,123 @@ import { identifierName } from '@angular/compiler';
 
 export class PortfolioComponent implements OnInit {
 
-options = [
-  { label: "All", key: ""},
-  { label: "Wed Design", key: "webdesign" },
-  { label: "Graphic Design", key: "graphicdesign" },
-  { label: "Artwork", key: "artwork" }
-];
-chipControl = new FormControl(new Set());
+  options = [
+    { label: "All", key: "all" },
+    { label: "Wed Design", key: "webdesign" },
+    { label: "Graphic Design", key: "graphicdesign" },
+    { label: "Artwork", key: "artwork" }
+  ];
+  chipControl = new FormControl(new Set());
 
-constructor(private fb: FormBuilder, public dialog: MatDialog) {}
+  constructor(private fb: FormBuilder, public dialog: MatDialog) { }
 
-openDialog (item:any) {
-  this.dialog.open(PorfolioModal,{
-    data:{
-      sendingdata: item
-        },
-    width: '500px' ,
-    height: '500px'
- }  )
-};
+  openDialog(item: any) {
+    this.dialog.open(PorfolioModal, {
+      data: {
+        sendingdata: item
+      },
+      width: '500px',
+      height: '500px'
+    })
+  };
 
-toggleChip = (chip: any) => {
-  const addChip = () => { this.chips.add(chip); };
-  const removeChip = () => { this.chips.delete(chip); };
-  
-  this.chips.has(chip) ? removeChip() : addChip();
-  console.log(this.chips)
-  console.log(chip)
+  toggleChip = (chip: any) => {
+    const addChip = () => { this.chips.add(chip); };
+    const removeChip = () => { this.chips.delete(chip); };
 
-  this.filterPortfolio = this.portfolio.filter((item) => {
-    return item.group === chip.key
-   
-  })
-}
+    this.chips.has(chip) ? removeChip() : addChip();
+    console.log(this.chips)
+    console.log(chip)
+
+    this.filterPortfolio = this.portfolio.filter((item) => {
+      return item.group === chip.key
+
+    })
+  }
   get chips() { return this.chipControl.value; }
-filterPortfolio: Portfolio[] = [
-]
+  filterPortfolio: Portfolio[] = [
+  ]
 
-ngOnInit(): void {
-  this.filterPortfolio = this.portfolio
-}
-portfolio: Portfolio[] = [
-  {
-    id: 0,
-    group: 'webdesign',
-    image: '../../../assets/images/image_portfolio/portfolio-1.png',
-  },
-  {
-    id: 1,
-    group: 'webdesign',
-    image: '../../../assets/images/image_portfolio/portfolio-2.png',
-  },
-  {
-    id: 2,
-    group: 'webdesign',
-    image: '../../../assets/images/image_portfolio/portfolio-3.png',
-  },
-  {
-    id: 3,
-    group: 'graphicdesign',
-    image: '../../../assets/images/image_portfolio/portfolio-4.png',
-  },
-  {
-    id: 4,
-    group: 'graphicdesign',
-    image: '../../../assets/images/image_portfolio/portfolio-5.png',
-  },
-  {
-    id: 5,
-    group: 'graphicdesign',
-    image: '../../../assets/images/image_portfolio/portfolio-6.png',
-  },
-  {
-    id: 6,
-    group: 'artwork',
-    image: '../../../assets/images/image_portfolio/portfolio-7.png',
-  },
-  {
-    id: 7,
-    group: 'artwork',
-    image: '../../../assets/images/image_portfolio/portfolio-8.png',
-  },
-  {
-    id: 8,
-    group: 'artwork',
-    image: '../../../assets/images/image_portfolio/portfolio-9.png',
-  },
-  {
-    id: 9,
-    group: 'webdesign',
-    image: '../../../assets/images/image_portfolio/portfolio-10.png',
-  },
-  {
-    id: 10,
-    group: 'graphicdesign',
-    image: '../../../assets/images/image_portfolio/portfolio-11.png',
-  },
-  {
-    id: 11,
-    group: 'artwork',
-    image: '../../../assets/images/image_portfolio/portfolio-12.png',
-  },
-]
+  ngOnInit(): void {
+    this.filterPortfolio = this.portfolio
+  }
+  portfolio: Portfolio[] = [
+    {
+      id: 0,
+      name: 'all',
+      group: 'webdesign',
+      image: '../../../assets/images/image_portfolio/portfolio-1.png',
+    },
+    {
+      id: 1,
+      name: 'all',
+      group: 'webdesign',
+      image: '../../../assets/images/image_portfolio/portfolio-2.png',
+    },
+    {
+      id: 2,
+      name: 'all',
+      group: 'webdesign',
+      image: '../../../assets/images/image_portfolio/portfolio-3.png',
+    },
+    {
+      id: 3,
+      name: 'all',
+      group: 'graphicdesign',
+      image: '../../../assets/images/image_portfolio/portfolio-4.png',
+    },
+    {
+      id: 4,
+      name: 'all',
+      group: 'graphicdesign',
+      image: '../../../assets/images/image_portfolio/portfolio-5.png',
+    },
+    {
+      id: 5,
+      name: 'all',
+      group: 'graphicdesign',
+      image: '../../../assets/images/image_portfolio/portfolio-6.png',
+    },
+    {
+      id: 6,
+      name: 'all',
+      group: 'artwork',
+      image: '../../../assets/images/image_portfolio/portfolio-7.png',
+    },
+    {
+      id: 7,
+      name: 'all',
+      group: 'artwork',
+      image: '../../../assets/images/image_portfolio/portfolio-8.png',
+    },
+    {
+      id: 8,
+      name: 'all',
+      group: 'artwork',
+      image: '../../../assets/images/image_portfolio/portfolio-9.png',
+    },
+    {
+      id: 9,
+      name: 'all',
+      group: 'webdesign',
+      image: '../../../assets/images/image_portfolio/portfolio-10.png',
+    },
+    {
+      id: 10,
+      name: 'all',
+      group: 'graphicdesign',
+      image: '../../../assets/images/image_portfolio/portfolio-11.png',
+    },
+    {
+      id: 11,
+      name: 'all',
+      group: 'artwork',
+      image: '../../../assets/images/image_portfolio/portfolio-12.png',
+    },
+  ]
 
 
-// window.onclick = function (event) {
+  // window.onclick = function (event) {
   //   let modal = document.querySelector('.modal');
   //   let span = document.getElementsByClassName('close');
   //   let bigImage = document.querySelector('.modal-content');
@@ -192,5 +204,5 @@ portfolio: Portfolio[] = [
 
 export class PorfolioModal {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 }
