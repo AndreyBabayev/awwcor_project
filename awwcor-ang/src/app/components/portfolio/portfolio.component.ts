@@ -12,6 +12,9 @@ import { identifierName } from '@angular/compiler';
 
 export class PortfolioComponent implements OnInit {
 
+  arrayForCategory: any[] = []
+
+
   options = [
     { label: "All", key: "all" },
     { label: "Wed Design", key: "webdesign" },
@@ -31,23 +34,55 @@ export class PortfolioComponent implements OnInit {
       height: '500px'
     })
   };
-
   toggleChip = (chip: any) => {
-    const addChip = () => { this.chips.add(chip); };
-    const removeChip = () => { this.chips.delete(chip); };
+    const addChip = () => {
+      this.chips.add(chip);
+      this.arrayForCategory = Array.from(this.chips)
+      this.sortElementByCategory(this.arrayForCategory,chip)
 
+      console.log("look", this.arrayForCategory)
+    };
+    const removeChip = () => {
+      this.chips.delete(chip);
+      this.arrayForCategory = Array.from(this.chips)
+      this.sortElementByCategory(this.arrayForCategory,chip)
+      console.log("look", this.arrayForCategory)
+    };
     this.chips.has(chip) ? removeChip() : addChip();
     console.log(this.chips)
     console.log(chip)
 
-    this.filterPortfolio = this.portfolio.filter((item) => {
-      return item.group === chip.key
-
-    })
+    // this.filterPortfolio = this.portfolio.filter((item) => {
+    //   return item.group === chip.key
+    // })
   }
   get chips() { return this.chipControl.value; }
   filterPortfolio: Portfolio[] = [
   ]
+
+
+  sortElementByCategory(arr: any[],currentChip:any) {
+
+    if (arr.length === 0) {
+      this.filterPortfolio = this.portfolio
+    }
+    // else if(arr[0].key==="all"){
+    //   this.filterPortfolio = this.portfolio
+    // }
+else if(currentChip.key==="all"){
+console.log("qwert")
+}
+    else {
+      this.filterPortfolio = []
+      this.portfolio.filter((item) => {
+        arr.filter((category) => {
+          if (item.group === category.key) {
+            this.filterPortfolio.push(item)
+          }
+        })
+      })
+    }
+  }
 
   ngOnInit(): void {
     this.filterPortfolio = this.portfolio
@@ -126,8 +161,6 @@ export class PortfolioComponent implements OnInit {
       image: '../../../assets/images/image_portfolio/portfolio-12.png',
     },
   ]
-
-
   // window.onclick = function (event) {
   //   let modal = document.querySelector('.modal');
   //   let span = document.getElementsByClassName('close');

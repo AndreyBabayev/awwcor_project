@@ -2,21 +2,18 @@
   <div class="section-header1">
     <h1 class="portfolio">Portfolio</h1>
     <div class="description-portfolio" id="portfolio">
-      Duis mollis, est non commodo luctus,
-      nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+      Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
     </div>
   </div>
-  <mat-chip-list aria-label="filter-list" id="filter-list" [multiple]="true"
-  selectable>
-      <mat-chip *ngFor="let option of options" (click)="toggleChip(option)"
-   [selected]="chips.has(option)">{{ option.label }}</mat-chip>
-</mat-chip-list>
+  <mat-chip-list aria-label="filter-list" id="filter-list" [multiple]="true" selectable>
+    <mat-chip *ngFor="let option of options" (click)="toggleChip(option)" [selected]="chips.has(option)">{{
+      option.label
+    }}</mat-chip>
+  </mat-chip-list>
 
   <section class="portfolio-service">
     <div class="portfolio-item-univ" *ngFor="let item of filterPortfolio">
-     <img [src]="item.image" alt="img-univ" (click)="openDialog(item)"/>
-      </div>
-  </section> 
+      <img [src]="item.image" alt="img-univ" (click)="openDialog(item)" />
+    </div>
   </section>
-
-
+</section>
